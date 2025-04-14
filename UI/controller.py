@@ -1,7 +1,7 @@
 import flet as ft
 
 from UI.view import View
-from model.model import Model
+from model.modello import Model
 
 
 class Controller:
@@ -14,7 +14,14 @@ class Controller:
         self._mese = 0
 
     def handle_umidita_media(self, e):
-        pass
+        self._view.lst_result.controls.clear()
+
+        self._mese = self._view.dd_mese.value
+        umidita = self._model.getUmidita(self._mese)
+        for (localita, valore) in umidita:
+            self._view.lst_result.controls.append(ft.Text(f"{localita}: {valore}"))
+        self._view.update_page()
+
 
 
 
