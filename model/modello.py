@@ -94,5 +94,7 @@ class Model:
 
 if __name__ == '__main__':
     m = Model()
-    print(m.calcola_sequenza(2))
+    sol = m.calcola_sequenza(2)
+    for s in sol:
+        print(s)
     #print(m.n_soluzioni)
